@@ -2,10 +2,10 @@
 
 ## Identificação do Projeto
 
-- **Nome do projeto:** PataFeliz Pet Shop — Landing Page  
-- **Autora:** [Seu Nome Completo]  
-- **Curso:** Introdução à Programação Front-End e Back-End (IP 20h A)  
-- **Programa:** SCTEC — Carreira Tech, Ciclo 2  
+- **Nome do projeto:** Pet Shop PataFeliz - Landing Page  
+- **Autora:** Erika Lopes
+- **Curso:** Introdução à Programação Front-End e Back-End (20h)  
+- **Programa:** SCTEC - Carreira Tech, Ciclo 2  
 - **Data de entrega:** [05/2026]
 
 ---
@@ -92,10 +92,10 @@ Para evitar possíveis restrições de CORS ao carregar recursos locais:
 
 | Tecnologia | Versão | Finalidade |
 |---|---|---|
-| HTML5 | — | Estruturação semântica do conteúdo |
-| CSS3 | — | Estilização, layout e responsividade |
+| HTML5 | - | Estruturação semântica do conteúdo |
+| CSS3 | - | Estilização, layout e responsividade |
 | JavaScript | ES6+ | Interatividade e validação de formulário |
-| Google Fonts | — | Tipografia (Playfair Display + Nunito) |
+| Google Fonts | - | Tipografia (Playfair Display + Nunito) |
 
 ---
 
