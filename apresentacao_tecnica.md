@@ -12,7 +12,7 @@ Muitos pequenos negócios não têm presença digital organizada. A página reso
 
 ### Proposta visual e comercial
 
-A proposta visual é **moderna, acolhedora e orientada à conversão**. As escolhas de cor — verde como cor principal, laranja como cor de ação — não são aleatórias: verde remete a natureza e cuidado, laranja cria urgência e chama atenção nos CTAs. A tipografia combina **Playfair Display** nos títulos (personalidade, elegância) com **Nunito** nos textos (leveza, legibilidade).
+A proposta visual é **moderna, acolhedora e orientada à conversão**. As escolhas das cores verde como cor principal, laranja como cor de ação - não são aleatórias: verde remete a natureza e cuidado, laranja cria urgência e chama atenção nos CTAs. A tipografia combina **Playfair Display** nos títulos (personalidade, elegância) com **Nunito** nos textos (leveza, legibilidade).
 
 ### Como a página converte clientes?
 
@@ -41,7 +41,7 @@ Priorizei HTML5 semântico em vez de `<div>` genéricas onde a semântica agrega
 <footer>     <!-- rodapé com informações institucionais -->
 ```
 
-Por exemplo, cada card de serviço usa `<article>` porque representa um conteúdo independente e completo — isso é semanticamente correto e beneficia leitores de tela.
+Por exemplo, cada card de serviço usa `<article>` porque representa um conteúdo independente e completo, é semanticamente correto e beneficia leitores de tela.
 
 ### Divisão das seções
 
@@ -53,7 +53,7 @@ Por exemplo, cada card de serviço usa `<article>` porque representa um conteúd
 footer     → Rodapé institucional
 ```
 
-Os `id`s das seções servem como âncoras para os links do menu de navegação, permitindo scroll suave com `scroll-behavior: smooth` no CSS — sem uma linha sequer de JavaScript para isso.
+Os `id`s das seções servem como âncoras para os links do menu de navegação, permitindo scroll suave com `scroll-behavior: smooth` no CSS e sem uma linha sequer de JavaScript para isso.
 
 ### Por que essa estrutura facilita manutenção?
 
@@ -146,7 +146,7 @@ Um requisito técnico explícito do projeto era o uso de posicionamento. Impleme
 .bubble-2    { top: 42%; left: 2%; }
 ```
 
-O resultado são camadas sobrepostas — círculo verde de fundo, o pet por cima, e os balões flutuando acima de tudo — criando profundidade visual sem JavaScript.
+O resultado são camadas sobrepostas — círculo verde de fundo, o pet por cima, e os balões flutuando acima de tudo e criando profundidade visual sem JavaScript.
 
 ### aspect-ratio nos cards
 
@@ -181,7 +181,7 @@ A abordagem foi **desktop-first**: o layout padrão é para telas maiores e as m
 font-size: clamp(2.2rem, 5vw, 3.4rem);
 ```
 
-O `clamp()` define um tamanho mínimo, um valor fluido relativo à viewport e um máximo. Isso elimina a necessidade de reescrever regras de `font-size` dentro de cada media query — o título do hero se redimensiona automaticamente conforme a tela.
+O `clamp()` define um tamanho mínimo, um valor fluido relativo à viewport e um máximo. Isso elimina a necessidade de reescrever regras de `font-size` dentro de cada media query, o título do hero se redimensiona automaticamente conforme a tela.
 
 ---
 
@@ -195,7 +195,7 @@ hamburger.addEventListener('click', () => {
 });
 ```
 
-A lógica é simples e eficiente: um único `toggle` adiciona ou remove a classe `.open` da lista de links. O CSS cuida de toda a exibição — o JS só gerencia o estado. Isso é a separação de responsabilidades funcionando na prática.
+A lógica é simples e eficiente: um único `toggle` adiciona ou remove a classe `.open` da lista de links. O CSS cuida de toda a exibição e o JS só gerencia o estado. Isso é a separação de responsabilidades funcionando na prática.
 
 Também adicionei suporte à tecla `Enter` para acessibilidade:
 
@@ -215,7 +215,7 @@ navLinks.querySelectorAll('a').forEach((link) => {
 
 ### Funcionalidade 2 — Validação do formulário
 
-O formulário usa `novalidate` no HTML para **desativar a validação nativa do navegador** e assumir o controle completo via JavaScript — isso me dá liberdade para personalizar mensagens e estilos de erro.
+O formulário usa `novalidate` no HTML para **desativar a validação nativa do navegador** e assumir o controle completo via JavaScript, isso me dá liberdade para personalizar mensagens e estilos de erro.
 
 ```javascript
 form.addEventListener('submit', (e) => {
@@ -248,7 +248,7 @@ document.getElementById(id).addEventListener('input', function () {
 });
 ```
 
-Isso melhora muito a experiência: o usuário vê o erro, começa a corrigir e o aviso desaparece imediatamente — sem precisar submeter o formulário de novo.
+Isso melhora muito a experiência: o usuário vê o erro, começa a corrigir e o aviso desaparece imediatamente, sem precisar submeter o formulário de novo.
 
 ### Função auxiliar toggleError
 
@@ -280,7 +280,7 @@ Ao invés de repetir a mesma lógica três vezes (uma para cada campo), encapsul
 | `style.css` | Apresentação visual |
 | `script.js` | Comportamento e interatividade |
 
-Nenhum estilo `inline` e nenhum `onclick` no HTML — toda a lógica está nos arquivos corretos.
+Nenhum estilo `inline` e nenhum `onclick` no HTML, toda a lógica está nos arquivos corretos.
 
 ### Nomenclatura de classes
 
@@ -288,7 +288,7 @@ As classes seguem o padrão **BEM-like** simplificado: bloco (`card`), elemento 
 
 ### Código limpo e comentado
 
-Cada bloco do CSS tem um comentário de seção. O JavaScript tem JSDoc nas funções e comentários explicativos nas lógicas menos óbvias. Isso é importante para manutenção — tanto para outros desenvolvedores quanto para eu mesmo semanas depois.
+Cada bloco do CSS tem um comentário de seção. O JavaScript tem JSDoc nas funções e comentários explicativos nas lógicas menos óbvias. Isso é importante para manutenção, tanto para outros desenvolvedores quanto para eu mesmo semanas depois.
 
 ### CTAs e acessibilidade
 
@@ -319,11 +319,11 @@ Por ser o primeiro projeto com esse nível de detalhamento visual, parti do layo
 
 ---
 
-## Apresentação Oral — Versão Curta (1–2 minutos)
+## Apresentação curta
 
 > "O projeto que desenvolvi é uma landing page para um pet shop fictício chamado PataFeliz, criada como desafio prático de front-end utilizando HTML5, CSS3 e JavaScript Vanilla, sem nenhum framework externo.
 >
-> O objetivo da página é funcionar como um cartão de visitas digital da marca: apresentar os serviços, transmitir credibilidade e converter visitantes em clientes. Estruturei o documento com tags semânticas — `nav`, `section`, `article` e `footer` — para facilitar a leitura, manutenção e acessibilidade.
+> O objetivo da página é funcionar como um cartão de visitas digital da marca: apresentar os serviços, transmitir credibilidade e converter visitantes em clientes. Estruturei o documento com tags semânticas - `nav`, `section`, `article` e `footer` - para facilitar a leitura, manutenção e acessibilidade.
 >
 > No CSS, centralizei toda a identidade visual em variáveis no `:root`, o que me permite alterar a paleta inteira em um único lugar. Usei CSS Grid para layouts bidimensionais, como a seção de serviços com cards responsivos, e Flexbox para alinhamentos lineares, como os indicadores da seção Sobre. A propriedade `aspect-ratio` garante proporção consistente nas imagens dos cards, e `clamp()` torna a tipografia fluida sem precisar de media queries adicionais.
 >
