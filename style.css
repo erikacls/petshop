@@ -1,0 +1,650 @@
+/* =============================================
+   PATAFELIZ PET SHOP — style.css
+   ============================================= */
+
+/* ---------- VARIÁVEIS ---------- */
+:root {
+  --verde:        #2d7a4f;
+  --verde-claro:  #4aab75;
+  --creme:        #fdf6ec;
+  --laranja:      #e8834a;
+  --marrom:       #5c3d2e;
+  --cinza-bg:     #f4f4f4;
+  --texto:        #2c2c2c;
+  --branco:       #ffffff;
+}
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--texto);
+  background: var(--branco);
+}
+
+/* ---------- NAVEGAÇÃO ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  height: 68px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--laranja);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--verde);
+}
+
+.nav-cta {
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 0.5rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover {
+  background: #cf6a35;
+}
+
+/* Menu hamburguer (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--verde);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* ---------- HERO ---------- */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5ee 0%, #fdf6ec 100%);
+  display: flex;
+  align-items: center;
+  padding: 100px 6% 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 560px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--verde-claro);
+  color: var(--branco);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--marrom);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content h1 span {
+  color: var(--verde);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botões reutilizáveis */
+.btn-primary {
+  background: var(--verde);
+  color: var(--branco);
+  padding: 0.85rem 2rem;
+  border-radius: 40px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: #235f3c;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2.5px solid var(--verde);
+  color: var(--verde);
+  padding: 0.82rem 2rem;
+  border-radius: 40px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--verde);
+  color: var(--branco);
+}
+
+/* Elemento gráfico Hero (position absolute) */
+.hero-img-wrap {
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+  width: clamp(280px, 40vw, 520px);
+  height: clamp(280px, 40vw, 520px);
+}
+
+.hero-circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(160deg, #4aab75 0%, #2d7a4f 100%);
+  z-index: 0;
+}
+
+.hero-pet {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(120px, 22vw, 240px);
+  z-index: 1;
+  line-height: 1;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+}
+
+/* Balões sobrepostos */
+.hero-bubble {
+  position: absolute;
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  font-weight: 800;
+  font-size: 0.85rem;
+  z-index: 2;
+}
+
+.bubble-1 {
+  top: 18%;
+  right: 2%;
+  color: var(--verde);
+}
+
+.bubble-1::before {
+  content: '⭐ ';
+}
+
+.bubble-2 {
+  top: 42%;
+  left: 2%;
+  color: var(--laranja);
+}
+
+.bubble-2::before {
+  content: '🏆 ';
+}
+
+/* ---------- UTILITÁRIOS DE SEÇÃO ---------- */
+.section-tag {
+  display: inline-block;
+  color: var(--verde);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--marrom);
+  margin-bottom: 1.4rem;
+}
+
+/* ---------- SOBRE ---------- */
+#sobre {
+  padding: 90px 6%;
+  background: var(--branco);
+}
+
+/* CSS Grid na seção Sobre */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sobre-text p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+}
+
+/* Imagem/placeholder Sobre */
+.sobre-img-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #d4edde, #b6dfc8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+}
+
+.sobre-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--laranja);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Imagem real (opcional) */
+.sobre-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* Indicadores — Flexbox */
+.stats-grid {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 100px;
+  background: var(--creme);
+  border-radius: 16px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid var(--verde-claro);
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--verde);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: #666;
+  font-weight: 700;
+}
+
+/* ---------- SERVIÇOS ---------- */
+#servicos {
+  padding: 90px 6%;
+  background: var(--cinza-bg);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* CSS Grid nos cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.13);
+}
+
+/* aspect-ratio aplicado na área do ícone/imagem do card */
+.card-icon-wrap {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #e8f5ee, #d0eddd);
+}
+
+/* Imagem real (opcional):
+   .card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; } */
+
+.card-body {
+  padding: 1.4rem 1.6rem;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  color: var(--marrom);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.card-badge {
+  display: inline-block;
+  margin-top: 0.8rem;
+  background: var(--creme);
+  color: var(--verde);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* ---------- CONTATO ---------- */
+#contato {
+  padding: 90px 6%;
+  background: var(--branco);
+}
+
+/* Flexbox na seção de contato */
+.contato-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contato-info p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--creme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Card do formulário */
+.form-card {
+  background: var(--creme);
+  border-radius: 24px;
+  padding: 2.4rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.form-card h3 {
+  font-size: 1.3rem;
+  color: var(--marrom);
+  margin-bottom: 1.6rem;
+  font-weight: 800;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  background: var(--branco);
+  transition: border-color 0.2s;
+  outline: none;
+  color: var(--texto);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--verde-claro);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Feedback de erro */
+.input-error {
+  border-color: #e05252 !important;
+}
+
+.error-msg {
+  font-size: 0.78rem;
+  color: #e05252;
+  margin-top: 0.3rem;
+  display: none;
+  font-weight: 700;
+}
+
+.error-msg.show {
+  display: block;
+}
+
+/* Botão enviar */
+.btn-submit {
+  width: 100%;
+  padding: 0.95rem;
+  background: var(--verde);
+  color: var(--branco);
+  border: none;
+  border-radius: 40px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background: #235f3c;
+}
+
+/* Mensagem de sucesso */
+.form-success {
+  display: none;
+  background: #d4edda;
+  color: #276040;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.form-success.show {
+  display: block;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--marrom);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 2rem 6%;
+  font-size: 0.88rem;
+}
+
+footer strong {
+  color: var(--branco);
+}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 900px) {
+  .sobre-grid,
+  .contato-wrap {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-img-wrap {
+    width: 240px;
+    height: 240px;
+    opacity: 0.35;
+  }
+
+  .hero-pet {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu mobile aberto */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: var(--branco);
+    padding: 1.5rem 6%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    flex-direction: column;
+  }
+}
