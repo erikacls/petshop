@@ -1,5 +1,5 @@
 /* =============================================
-   PATAFELIZ PET SHOP — script.js
+   PET SHOP PATAFELIZ — script.js
    ============================================= */
 
 /* ---------- MENU HAMBURGUER (mobile) ---------- */
