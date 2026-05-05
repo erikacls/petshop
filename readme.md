@@ -6,7 +6,7 @@
 - **Autora:** [Seu Nome Completo]  
 - **Curso:** Introdução à Programação Front-End e Back-End (IP 20h A)  
 - **Programa:** SCTEC — Carreira Tech, Ciclo 2  
-- **Data de entrega:** [dd/mm/aaaa]
+- **Data de entrega:** [05/2026]
 
 ---
 
