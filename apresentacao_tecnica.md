@@ -8,7 +8,7 @@ O projeto é uma **landing page responsiva para o pet shop fictício PataFeliz**
 
 ### Qual problema ela resolve?
 
-Muitos pequenos negócios não têm presença digital organizada. A página resolve isso ao reunir em um único lugar: identidade visual da marca, descrição dos serviços, indicadores de autoridade, informações de contato e um formulário funcional — tudo com navegação fluida e carregamento instantâneo, sem dependência de frameworks ou servidores.
+Muitos pequenos negócios não têm presença digital organizada. A página resolve isso ao reunir em um único lugar: identidade visual da marca, descrição dos serviços, indicadores de autoridade, informações de contato e um formulário funcional — tudo com navegação fluida e carregamento instantâneo, sem dependência de frameworks, bibliotecas JavaScript ou servidores.
 
 ### Proposta visual e comercial
 
@@ -81,12 +81,14 @@ Toda a identidade visual está centralizada em variáveis no `:root`:
 
 ```css
 :root {
-  --verde:       #2d7a4f;
+  --verde:        #2d7a4f;
   --verde-claro: #4aab75;
-  --laranja:     #e8834a;
-  --marrom:      #5c3d2e;
-  --creme:       #fdf6ec;
-  --texto:       #2c2c2c;
+  --creme:        #fdf6ec;
+  --laranja:      #e8834a;
+  --marrom:       #5c3d2e;
+  --cinza-bg:     #f4f4f4;
+  --texto:        #2c2c2c;
+  --branco:       #ffffff;
 }
 ```
 
@@ -96,7 +98,8 @@ Isso significa que, para mudar a cor principal do site inteiro, altero **uma ún
 
 Usei as duas ferramentas com propósitos distintos e intencionais:
 
-**CSS Grid** foi usado para layouts bidimensionais (linhas e colunas simultâneas):
+**CSS Grid** foi usado para layouts bidimensionais, como a seção Sobre, a seção de Serviços e a seção de Contato:
+
 ```css
 /* Seção Sobre: duas colunas de largura definida */
 .sobre-grid {
@@ -111,7 +114,19 @@ Usei as duas ferramentas com propósitos distintos e intencionais:
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.6rem;
 }
+
+/* Seção Contato: informações e formulário lado a lado no desktop */
+.contato-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1120px;
+  margin: 0 auto;
+}
 ```
+
+Na seção de Contato, o Grid foi usado para manter as informações de contato e o formulário lado a lado no desktop. O `max-width: 1120px` limita a largura máxima do conteúdo em monitores grandes, enquanto `margin: 0 auto` centraliza o bloco na tela.
 
 **Flexbox** foi usado para alinhamento unidimensional:
 ```css
@@ -125,22 +140,32 @@ Usei as duas ferramentas com propósitos distintos e intencionais:
 /* Itens de contato com ícone + texto */
 .info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.9rem;
 }
 ```
 
+Nos itens de contato, o Flexbox foi usado para alinhar ícones e textos, mantendo boa leitura tanto no desktop quanto no mobile.
+
 ### position: relative e absolute no Hero
 
-Um requisito técnico explícito do projeto era o uso de posicionamento. Implementei na seção Hero:
+Um requisito técnico explícito do projeto era o uso de posicionamento. Implementei isso na seção Hero utilizando `position: relative` no container principal e `position: absolute` nos elementos visuais sobrepostos.
 
 ```css
-/* Container relativo — define o contexto de posicionamento */
-.hero-img-wrap {
+/* Seção principal define o contexto geral */
+#hero {
   position: relative;
+  overflow: hidden;
 }
 
-/* Elementos filhos posicionados absolutamente dentro do container */
+/* Container visual posicionado dentro do Hero */
+.hero-img-wrap {
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+}
+
+/* Elementos sobrepostos */
 .hero-circle { position: absolute; bottom: 0; right: 0; }
 .hero-pet    { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 .hero-bubble { position: absolute; }
@@ -164,16 +189,37 @@ Isso garante que a área de imagem/ícone de cada card mantenha sempre a mesma p
 
 ```css
 @media (max-width: 900px) {
-  /* Layouts de duas colunas viram uma coluna */
-  .sobre-grid, .contato-wrap { grid-template-columns: 1fr; }
+  #hero {
+    min-height: auto;
+    padding: 160px 6% 80px;
+  }
+
+  .sobre-grid,
+  .contato-wrap {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-bubble {
+    display: none;
+  }
 }
 
 @media (max-width: 680px) {
-  /* Menu hamburguer entra em cena */
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 ```
+
+Nas telas menores, as seções Sobre e Contato passam de duas colunas para uma coluna. O Hero também recebe ajustes de altura, espaçamento e opacidade do elemento visual, garantindo que o texto e os CTAs continuem sendo o foco principal no mobile.
+
+Também foram aplicadas regras como `overflow-x: hidden`, `min-width: 0` e `overflow-wrap` para evitar estouros horizontais em telas menores, especialmente em grids, cards, formulários e textos longos.
 
 A abordagem foi **desktop-first**: o layout padrão é para telas maiores e as media queries fazem os ajustes para mobile. Para um projeto futuro, eu consideraria migrar para **mobile-first**, que é considerada melhor prática atualmente.
 
@@ -294,9 +340,9 @@ Cada bloco do CSS tem um comentário de seção. O JavaScript tem JSDoc nas fun�
 
 ### CTAs e acessibilidade
 
-- Botões de ação têm `aria-label` onde necessário;
-- O hamburguer tem `role="button"` e `tabindex="0"` para ser acessível via teclado;
-- Imagens decorativas têm `aria-hidden="true"`.
+- O menu hamburguer possui `aria-label`, `role="button"` e `tabindex="0"` para melhorar a navegação por teclado;
+- O emoji principal do Hero usa `role="img"` e `aria-label`, tornando seu significado mais claro para tecnologias assistivas;
+- Elementos decorativos utilizam `aria-hidden="true"` quando não acrescentam informação essencial ao conteúdo.
 
 ---
 
@@ -327,7 +373,7 @@ Por ser o primeiro projeto com esse nível de detalhamento visual, parti do layo
 >
 > O objetivo da página é funcionar como um cartão de visitas digital da marca: apresentar os serviços, transmitir credibilidade e converter visitantes em clientes. Estruturei o documento com tags semânticas - `nav`, `section`, `article` e `footer` - para facilitar a leitura, manutenção e acessibilidade.
 >
-> No CSS, centralizei toda a identidade visual em variáveis no `:root`, o que me permite alterar a paleta inteira em um único lugar. Usei CSS Grid para layouts bidimensionais, como a seção de serviços com cards responsivos, e Flexbox para alinhamentos lineares, como os indicadores da seção Sobre. A propriedade `aspect-ratio` garante proporção consistente nas imagens dos cards, e `clamp()` torna a tipografia fluida sem precisar de media queries adicionais.
+> No CSS, centralizei toda a identidade visual em variáveis no `:root`, o que me permite alterar a paleta inteira em um único lugar. Usei CSS Grid para layouts bidimensionais, como a seção Sobre, os cards de serviços e a área de Contato com informações e formulário lado a lado. Também usei Flexbox para alinhamentos lineares, como os indicadores da seção Sobre e os itens de contato com ícone e texto. A propriedade `aspect-ratio` garante proporção consistente nas imagens dos cards, e `clamp()` torna a tipografia fluida sem precisar de media queries adicionais.
 >
 > No JavaScript, implementei o menu hamburguer mobile com toggle de classe CSS e a validação do formulário de contato, que inclui verificação de campos obrigatórios e validação de e-mail por expressão regular. O feedback é dado em tempo real — o erro some enquanto o usuário digita — o que melhora significativamente a experiência.
 >
