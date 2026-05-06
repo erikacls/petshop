@@ -44,7 +44,7 @@
     <!-- Elementos sobrepostos via position absolute -->
     <div class="hero-img-wrap">
       <div class="hero-circle"></div>
-      <div class="hero-pet">🐶</div>
+      <div class="hero-pet" aria-label="Cachorro feliz" role="img">🐶</div>
       <div class="hero-bubble bubble-1">Nota 5.0 no Google</div>
       <div class="hero-bubble bubble-2">+500 pets atendidos</div>
     </div>
@@ -150,21 +150,25 @@
         </p>
         <div class="info-item">
           <span class="info-icon">📍</span>
-          Rua das Flores, 420 - Centro, Florianópolis/SC
+          <span class="info-text">Rua das Flores, 420 - Centro, Florianópolis/SC</span>
         </div>
         <div class="info-item">
           <span class="info-icon">📞</span>
-          (48) 99999-0000
+          <span class="info-text">(48) 99999-0000</span>
         </div>
+
         <div class="info-item">
           <span class="info-icon">✉️</span>
-          contato@patafeliz.com.br
+          <span class="info-text">contato@patafeliz.com.br</span>
         </div>
+
         <div class="info-item">
           <span class="info-icon">🕐</span>
-          Seg-Sex: 8h-19h &nbsp;|&nbsp; Sáb: 8h-14h
+          <span class="info-text">
+            Seg-Sex: 8h-19h <span class="separator">|</span> Sáb: 8h-14h
+          </span>
         </div>
-      </div>
+      </div> <!-- fecha contato-info -->
 
       <!-- FORMULÁRIO -->
       <div class="form-card">
