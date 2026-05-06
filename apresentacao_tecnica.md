@@ -369,7 +369,7 @@ Por ser o primeiro projeto com esse nível de detalhamento visual, parti do layo
 
 ## Apresentação curta
 
-> "O projeto que desenvolvi é uma landing page para um pet shop fictício chamado PataFeliz, criada como desafio prático de front-end utilizando HTML5, CSS3 e JavaScript Vanilla, sem nenhum framework externo.
+> O projeto que desenvolvi é uma landing page para um pet shop fictício chamado PataFeliz, criada como desafio prático de front-end utilizando HTML5, CSS3 e JavaScript Vanilla, sem nenhum framework externo.
 >
 > O objetivo da página é funcionar como um cartão de visitas digital da marca: apresentar os serviços, transmitir credibilidade e converter visitantes em clientes. Estruturei o documento com tags semânticas - `nav`, `section`, `article` e `footer` - para facilitar a leitura, manutenção e acessibilidade.
 >
@@ -379,4 +379,4 @@ Por ser o primeiro projeto com esse nível de detalhamento visual, parti do layo
 >
 > Um ponto que destaco é a separação clara de responsabilidades: HTML cuida da estrutura, CSS da apresentação e JavaScript do comportamento. Não há estilos inline nem eventos no HTML. O código foi organizado em blocos comentados para facilitar manutenção.
 >
-> Como próximos passos, eu migraria para uma abordagem mobile-first, adicionaria animações com IntersectionObserver e integraria o formulário a um serviço real de envio de e-mails."
+> Como próximos passos, eu migraria para uma abordagem mobile-first, adicionaria animações com IntersectionObserver e integraria o formulário a um serviço real de envio de e-mails.
