@@ -12,13 +12,15 @@ Muitos pequenos negócios não têm presença digital organizada. A página reso
 
 ### Proposta visual e comercial
 
-A proposta visual é **moderna, acolhedora e orientada à conversão**. As escolhas das cores verde como cor principal, laranja como cor de ação - não são aleatórias: verde remete a natureza e cuidado, laranja cria urgência e chama atenção nos CTAs. A tipografia combina **Playfair Display** nos títulos (personalidade, elegância) com **Nunito** nos textos (leveza, legibilidade).
+A proposta visual é **moderna, acolhedora e orientada à conversão**. As escolhas das cores verde como cor principal e laranja como cor de ação não são aleatórias: verde remete à natureza, cuidado e confiança, enquanto o laranja cria destaque visual e chama atenção para os CTAs.
+
+A tipografia combina **Nunito** na logo, navegação, botões e textos corridos, transmitindo leveza, legibilidade e uma sensação mais amigável, com **Playfair Display** nos títulos principais, trazendo personalidade, elegância e contraste visual.
 
 ### Como a página converte clientes?
 
 A conversão foi pensada em camadas:
 - A seção Hero captura a atenção com impacto visual e dois CTAs claros: **"Agendar serviço"** (conversão direta) e **"Ver serviços"** (engajamento progressivo);
-- Os indicadores numéricos na seção Sobre (`500+ pets atendidos`, `11 anos de experiência`, `5★`) constroem **prova social e confiança**;
+- Os indicadores numéricos na seção Sobre (`500+ pets atendidos`, `6 anos de experiência`, `5★`) constroem **prova social e confiança**;
 - Os cards de serviço com preços visíveis reduzem a fricção de decisão;
 - O formulário de contato com validação imediata melhora a taxa de envio ao corrigir erros antes de frustrar o usuário.
 
