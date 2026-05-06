@@ -1,4 +1,4 @@
-# 🐾 PataFeliz Pet Shop — Landing Page
+# 🐾 Pet Shop PataFeliz — Landing Page
 
 ## Identificação do Projeto
 
@@ -6,7 +6,7 @@
 - **Autora:** Erika Lopes
 - **Curso:** Introdução à Programação Front-End e Back-End (20h)  
 - **Programa:** SCTEC - Carreira Tech, Ciclo 2  
-- **Data de entrega:** [05/2026]
+- **Data de entrega:** 07 de maio de 2026
 
 ---
 
@@ -18,11 +18,23 @@ O projeto foi desenvolvido utilizando exclusivamente **HTML5**, **CSS3** e **Jav
 
 ---
 
+## Repositório
+
+Este projeto está versionado no GitHub para fins de organização, histórico de desenvolvimento e consulta pública do código-fonte.
+
+- **Link do repositório:** https://github.com/erikacls/petshop
+
+> Observação: a entrega oficial do desafio foi realizada por meio do arquivo compactado contendo todos os arquivos necessários para execução local do projeto.
+
+---
+
 ## Etapas de Desenvolvimento
 
 ### 1. Planejamento e Identidade Visual
 
-A primeira etapa consistiu na definição da identidade visual da marca. Foram escolhidas cores que transmitissem acolhimento e confiança — verde como cor principal (`#2d7a4f`), laranja como cor de destaque (`#e8834a`) e tons creme para o fundo. As fontes **Playfair Display** (para títulos) e **Nunito** (para textos corridos) foram importadas do Google Fonts para garantir hierarquia tipográfica clara e leitura agradável.
+A primeira etapa consistiu na definição da identidade visual da marca. Foram escolhidas cores que transmitissem acolhimento e confiança — verde como cor principal (`#2d7a4f`), laranja como cor de destaque (`#e8834a`) e tons creme para o fundo.
+
+A tipografia foi definida a partir da combinação das fontes **Nunito** e **Playfair Display**, importadas do Google Fonts. A **Nunito** foi utilizada na logo, navegação, botões, formulários e textos corridos por ter uma aparência arredondada, moderna e amigável, adequada ao segmento pet. Já a **Playfair Display** foi aplicada nos títulos principais para criar contraste visual, elegância e personalidade na composição da landing page.
 
 ### 2. Estruturação em HTML5 Semântico
 
@@ -47,19 +59,23 @@ O arquivo `script.js` implementa duas funcionalidades principais:
 - **Menu hamburguer:** alterna a classe `.open` nos links de navegação em telas pequenas, permitindo que o menu seja exibido ou ocultado. Inclui suporte à tecla `Enter` para acessibilidade;
 - **Validação do formulário:** ao clicar em "Enviar", o script verifica se os campos obrigatórios (nome, e-mail e mensagem) estão preenchidos. O campo de e-mail é validado por uma expressão regular (`/^[^\s@]+@[^\s@]+\.[^\s@]+$/`). Erros são exibidos inline, em tempo real, e uma mensagem de sucesso é mostrada após o envio bem-sucedido.
 
+---
+
 ### 5. Organização de Arquivos
 
-O projeto foi organizado na seguinte estrutura de pastas para facilitar a manutenção e escalabilidade:
+O projeto foi organizado na seguinte estrutura de arquivos para facilitar a manutenção e a compreensão da entrega:
 
-```
-patafeliz/
+```text
+petshop/
 ├── index.html
 ├── style.css
 ├── script.js
-├── README.md
-└── assets/
-    └── (imagens, ícones e outros recursos)
+├── readme.md
+├── apresentacao_tecnica.md
+└── LICENSE
 ```
+
+O arquivo `apresentacao_tecnica.md` é um material complementar com uma explicação mais detalhada sobre as decisões técnicas do projeto.
 
 ---
 
